@@ -28,7 +28,6 @@ It requires OS X 10.7+ and a 64-bit processor.
 ## Changelog
 
 ### 2.7.0
-
 * Add the Yunbi and Poloniex ETH price.
 
 ### 2.6.0

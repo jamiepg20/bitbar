@@ -18,7 +18,7 @@
         self.ticker_menu = @"Haobtc";
 
         // Website location
-        self.url = @"https://haobtc.com/wallet?from=1NDnnWCUu926z4wxA3sNBGYWNQD3mKyes8";
+        self.url = @"https://haobtc.com/exchange/main?from=1NDnnWCUu926z4wxA3sNBGYWNQD3mKyes8";
 
         // Immediately request first update
         [self requestUpdate];
@@ -40,7 +40,7 @@
 // Initiates an asyncronous HTTP connection
 - (void)requestUpdate
 {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://haobtc.com/api/v1/price/cny"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://haobtc.com/exchange/api/v1/ticker"]];
 
     // Set the request's user agent
     [request addValue:@"btcbar/2.0 (HaobtcCNYFetcher)" forHTTPHeaderField:@"User-Agent"];
@@ -85,8 +85,10 @@
     // Results parsed successfully from JSON
     if (results)
     {
-        NSString *sell_price = [results objectForKey:@"sell"];
-        NSString *buy_price = [results objectForKey:@"buy"];
+        NSDictionary *ticker = [results objectForKey:@"ticker"];
+
+        NSString *sell_price = [ticker objectForKey:@"sell"];
+        NSString *buy_price = [ticker objectForKey:@"buy"];
         if (sell_price && buy_price) {
 //            NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
 //            NSString *resultsStatus = [numberFormatter stringFromNumber:sell_price];
