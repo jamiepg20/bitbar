@@ -27,7 +27,7 @@
     
     // Pass each ticker object into a dictionary, get first updates
     tickers = [NSMutableArray arrayWithObjects:
-               [[HaobtcInstantCNYFetcher alloc] init],
+//               [[HaobtcInstantCNYFetcher alloc] init],
                [[HaobtcCNYFetcher alloc] init],
                [[HuobiCNYFetcher alloc] init],
                [[OKCoinCNYFetcher alloc] init],
@@ -39,6 +39,8 @@
                [[BTCeUSDFetcher alloc] init],
                [[YunbiEthFetcher alloc] init],
                [[PoloniexEthFetcher alloc] init],
+               [[YunbiEtcFetcher alloc] init],
+               [[PoloniexEtcFetcher alloc] init],
               // [[WinkDexUSDFetcher alloc] init],
 //               [[Btc38 alloc] init],
 //               [[AstockFetcher alloc] init],

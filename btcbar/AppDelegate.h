@@ -21,6 +21,8 @@
 #import "OKCoinFutureUSDFetcher.h"
 #import "YunbiEthFetcher.h"
 #import "PoloniexEthFetcher.h"
+#import "YunbiEtcFetcher.h"
+#import "PoloniexEtcFetcher.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
     NSMenu *btcbarMainMenu;

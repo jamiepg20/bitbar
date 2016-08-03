@@ -6,16 +6,16 @@
 //  Copyright (c) 2015 nearengine. All rights reserved.
 //
 
-#import "PoloniexEthFetcher.h"
+#import "PoloniexEtcFetcher.h"
 
-@implementation PoloniexEthFetcher
+@implementation PoloniexEtcFetcher
 
 - (id)init
 {
     if (self = [super init])
     {
         // Menu Item Name
-        self.ticker_menu = @"Poloniex ETH";
+        self.ticker_menu = @"Poloniex ETC";
         
         // Website location
         self.url = @"https://poloniex.com";
@@ -82,7 +82,7 @@
     if(results)
     {
         // Get API status
-        NSDictionary *ticker = [results objectForKey:@"USDT_ETH"];
+        NSDictionary *ticker = [results objectForKey:@"USDT_ETC"];
         NSString *resultsStatus = [ticker objectForKey:@"last"];
         
         

@@ -19,6 +19,8 @@
 		4AE253DC1BDF8AED002B8FDD /* OKCoinFutureUSDFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE253DA1BDF8AED002B8FDD /* OKCoinFutureUSDFetcher.m */; };
 		4AEFB3E11AE0C48D00D6BE3A /* AstockFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEFB3DC1AE0C48D00D6BE3A /* AstockFetcher.m */; };
 		4AEFB3E21AE0C48D00D6BE3A /* Btc38.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEFB3DE1AE0C48D00D6BE3A /* Btc38.m */; };
+		4AFCE09A1D51C8D000D8032E /* PoloniexEtcFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFCE0971D51C8D000D8032E /* PoloniexEtcFetcher.m */; };
+		4AFCE09B1D51C8D000D8032E /* YunbiEtcFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFCE0991D51C8D000D8032E /* YunbiEtcFetcher.m */; };
 		830CE091171B6C3E00DDD525 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830CE090171B6C3E00DDD525 /* Cocoa.framework */; };
 		830CE09B171B6C3E00DDD525 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 830CE099171B6C3E00DDD525 /* InfoPlist.strings */; };
 		830CE09D171B6C3E00DDD525 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 830CE09C171B6C3E00DDD525 /* main.m */; };
@@ -57,6 +59,10 @@
 		4AEFB3DC1AE0C48D00D6BE3A /* AstockFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AstockFetcher.m; path = Fetchers/AstockFetcher.m; sourceTree = "<group>"; };
 		4AEFB3DD1AE0C48D00D6BE3A /* Btc38.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Btc38.h; path = Fetchers/Btc38.h; sourceTree = "<group>"; };
 		4AEFB3DE1AE0C48D00D6BE3A /* Btc38.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Btc38.m; path = Fetchers/Btc38.m; sourceTree = "<group>"; };
+		4AFCE0961D51C8D000D8032E /* PoloniexEtcFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PoloniexEtcFetcher.h; path = Fetchers/PoloniexEtcFetcher.h; sourceTree = "<group>"; };
+		4AFCE0971D51C8D000D8032E /* PoloniexEtcFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PoloniexEtcFetcher.m; path = Fetchers/PoloniexEtcFetcher.m; sourceTree = "<group>"; };
+		4AFCE0981D51C8D000D8032E /* YunbiEtcFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YunbiEtcFetcher.h; path = Fetchers/YunbiEtcFetcher.h; sourceTree = "<group>"; };
+		4AFCE0991D51C8D000D8032E /* YunbiEtcFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YunbiEtcFetcher.m; path = Fetchers/YunbiEtcFetcher.m; sourceTree = "<group>"; };
 		830CE08D171B6C3E00DDD525 /* btcbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = btcbar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		830CE090171B6C3E00DDD525 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		830CE093171B6C3E00DDD525 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -168,6 +174,10 @@
 		838F4297182E5A5000B4FC58 /* Fetchers */ = {
 			isa = PBXGroup;
 			children = (
+				4AFCE0961D51C8D000D8032E /* PoloniexEtcFetcher.h */,
+				4AFCE0971D51C8D000D8032E /* PoloniexEtcFetcher.m */,
+				4AFCE0981D51C8D000D8032E /* YunbiEtcFetcher.h */,
+				4AFCE0991D51C8D000D8032E /* YunbiEtcFetcher.m */,
 				4A93AA421D000A3B00A7C6E4 /* HaobtcInstantCNYFetcher.h */,
 				4A93AA431D000A3B00A7C6E4 /* HaobtcInstantCNYFetcher.m */,
 				4A598AB41CC4826C0037DAF2 /* PoloniexEthFetcher.h */,
@@ -236,7 +246,7 @@
 		830CE085171B6C3E00DDD525 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = nearengine;
 				TargetAttributes = {
 					830CE08C171B6C3E00DDD525 = {
@@ -285,12 +295,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AFCE09A1D51C8D000D8032E /* PoloniexEtcFetcher.m in Sources */,
 				4AEFB3E11AE0C48D00D6BE3A /* AstockFetcher.m in Sources */,
 				4AEFB3E21AE0C48D00D6BE3A /* Btc38.m in Sources */,
 				83C3E7491859700100FA2921 /* BitStampUSDFetcher.m in Sources */,
 				4AE253D91BDF8973002B8FDD /* BTCCCNYFetcher.m in Sources */,
 				4A5F94F11B0C54A00077BEBF /* HuobiCNYFetcher.m in Sources */,
 				4A93AA441D000A3B00A7C6E4 /* HaobtcInstantCNYFetcher.m in Sources */,
+				4AFCE09B1D51C8D000D8032E /* YunbiEtcFetcher.m in Sources */,
 				4A598AB91CC4826C0037DAF2 /* YunbiEthFetcher.m in Sources */,
 				4A5F94F01B0C54A00077BEBF /* BitFinexUSDFetcher.m in Sources */,
 				830CE09D171B6C3E00DDD525 /* main.m in Sources */,
@@ -332,6 +344,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
