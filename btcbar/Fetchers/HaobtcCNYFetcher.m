@@ -15,7 +15,7 @@
     if (self = [super init])
     {
         // Menu Item Name
-        self.ticker_menu = @"Haobtc";
+        self.ticker_menu = @"BiXin";
 
         // Website location
         self.url = @"http://k.sosobtc.com/btc_haobtc.html?from=1NDnnWCUu926z4wxA3sNBGYWNQD3mKyes8?from=1NDnnWCUu926z4wxA3sNBGYWNQD3mKyes8";
@@ -40,7 +40,7 @@
 // Initiates an asyncronous HTTP connection
 - (void)requestUpdate
 {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://haobtc.com/exchange/api/v1/ticker"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://buysell.haobtc.com/broker/get_ticker"]];
 
     // Set the request's user agent
     [request addValue:@"btcbar/2.0 (HaobtcCNYFetcher)" forHTTPHeaderField:@"User-Agent"];
@@ -85,10 +85,10 @@
     // Results parsed successfully from JSON
     if (results)
     {
-        NSDictionary *ticker = [results objectForKey:@"ticker"];
+        NSDictionary *ticker = [results objectForKey:@"result"];
 
-        NSString *sell_price = [ticker objectForKey:@"sell"];
-        NSString *buy_price = [ticker objectForKey:@"buy"];
+        NSString *sell_price = [ticker objectForKey:@"bid"];
+        NSString *buy_price = [ticker objectForKey:@"ask"];
         if (sell_price && buy_price) {
 //            NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
 //            NSString *resultsStatus = [numberFormatter stringFromNumber:sell_price];

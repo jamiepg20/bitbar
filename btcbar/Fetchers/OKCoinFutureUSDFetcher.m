@@ -92,13 +92,7 @@
             NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
             [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
             NSString *resultsStatus = [numberFormatter stringFromNumber:ticker];
-            resultsStatus = [NSString stringWithFormat:@"%@", resultsStatus];
-            
-            NSNumberFormatter *currencyStyle = [[NSNumberFormatter alloc] init];
-            currencyStyle.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
-            currencyStyle.numberStyle = NSNumberFormatterCurrencyStyle;
-            resultsStatus = [currencyStyle stringFromNumber:[NSDecimalNumber decimalNumberWithString:resultsStatus]];
-            self.ticker = resultsStatus;
+            resultsStatus = [NSString stringWithFormat:@"$%@", resultsStatus];
             
             self.ticker = resultsStatus;
         }
