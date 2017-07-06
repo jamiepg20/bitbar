@@ -19,13 +19,16 @@ Simply place btcbar.app in your `/Applications` folder, and optionally add it to
 
 ## Download
 
-The current version of btcbar (2.9.0) can be downloaded here:
+The current version of btcbar (3.1.0) can be downloaded here:
 
-https://github.com/philsong/btcbar/releases/download/2.9.0/btcbar.zip
+https://github.com/philsong/btcbar/releases/download/3.1.0/coinbar.zip
 
 It requires OS X 10.7+ and a 64-bit processor.
 
 ## Changelog
+
+### 3.1.0
+* Add the Yunbi EOS price.
 
 ### 2.9.0
 * Add the Yunbi and Poloniex ETC price, remove the Haobtc benchmark price.

@@ -31,6 +31,7 @@
 		83C3E74F1859702000FA2921 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83C3E74E1859702000FA2921 /* MainMenu.xib */; };
 		83C3E7541859702D00FA2921 /* btclogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83C3E7501859702D00FA2921 /* btclogo.png */; };
 		83C3E759185970C800FA2921 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 83C3E758185970C800FA2921 /* Icon.icns */; };
+		8490B1E71F0E0FAC00F19DCD /* YunbiEOSFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8490B1E61F0E0FAC00F19DCD /* YunbiEOSFetcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,15 +64,15 @@
 		4AFCE0971D51C8D000D8032E /* PoloniexEtcFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PoloniexEtcFetcher.m; path = Fetchers/PoloniexEtcFetcher.m; sourceTree = "<group>"; };
 		4AFCE0981D51C8D000D8032E /* YunbiEtcFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YunbiEtcFetcher.h; path = Fetchers/YunbiEtcFetcher.h; sourceTree = "<group>"; };
 		4AFCE0991D51C8D000D8032E /* YunbiEtcFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YunbiEtcFetcher.m; path = Fetchers/YunbiEtcFetcher.m; sourceTree = "<group>"; };
-		830CE08D171B6C3E00DDD525 /* btcbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = btcbar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		830CE08D171B6C3E00DDD525 /* coinbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coinbar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		830CE090171B6C3E00DDD525 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		830CE093171B6C3E00DDD525 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		830CE094171B6C3E00DDD525 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		830CE095171B6C3E00DDD525 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		830CE098171B6C3E00DDD525 /* btcbar-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "btcbar-Info.plist"; sourceTree = "<group>"; };
+		830CE098171B6C3E00DDD525 /* coinbar-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "coinbar-Info.plist"; sourceTree = "<group>"; };
 		830CE09A171B6C3E00DDD525 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		830CE09C171B6C3E00DDD525 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		830CE09E171B6C3E00DDD525 /* btcbar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "btcbar-Prefix.pch"; sourceTree = "<group>"; };
+		830CE09E171B6C3E00DDD525 /* coinbar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "coinbar-Prefix.pch"; sourceTree = "<group>"; };
 		830CE0A2171B6C3E00DDD525 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		830CE0A3171B6C3E00DDD525 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		830CE0AE171B6C3F00DDD525 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -85,6 +86,8 @@
 		83C3E74E1859702000FA2921 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainMenu.xib; path = Views/MainMenu.xib; sourceTree = "<group>"; };
 		83C3E7501859702D00FA2921 /* btclogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btclogo.png; path = Icons/btclogo.png; sourceTree = "<group>"; };
 		83C3E758185970C800FA2921 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Icon.icns; path = ../Resources/Icon.icns; sourceTree = "<group>"; };
+		8490B1E51F0E0FAC00F19DCD /* YunbiEOSFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YunbiEOSFetcher.h; path = Fetchers/YunbiEOSFetcher.h; sourceTree = "<group>"; };
+		8490B1E61F0E0FAC00F19DCD /* YunbiEOSFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YunbiEOSFetcher.m; path = Fetchers/YunbiEOSFetcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +114,7 @@
 		830CE08E171B6C3E00DDD525 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				830CE08D171B6C3E00DDD525 /* btcbar.app */,
+				830CE08D171B6C3E00DDD525 /* coinbar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,10 +157,10 @@
 		830CE097171B6C3E00DDD525 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				830CE098171B6C3E00DDD525 /* btcbar-Info.plist */,
+				830CE098171B6C3E00DDD525 /* coinbar-Info.plist */,
 				830CE099171B6C3E00DDD525 /* InfoPlist.strings */,
 				830CE09C171B6C3E00DDD525 /* main.m */,
-				830CE09E171B6C3E00DDD525 /* btcbar-Prefix.pch */,
+				830CE09E171B6C3E00DDD525 /* coinbar-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -174,6 +177,8 @@
 		838F4297182E5A5000B4FC58 /* Fetchers */ = {
 			isa = PBXGroup;
 			children = (
+				8490B1E51F0E0FAC00F19DCD /* YunbiEOSFetcher.h */,
+				8490B1E61F0E0FAC00F19DCD /* YunbiEOSFetcher.m */,
 				4AFCE0961D51C8D000D8032E /* PoloniexEtcFetcher.h */,
 				4AFCE0971D51C8D000D8032E /* PoloniexEtcFetcher.m */,
 				4AFCE0981D51C8D000D8032E /* YunbiEtcFetcher.h */,
@@ -223,9 +228,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		830CE08C171B6C3E00DDD525 /* btcbar */ = {
+		830CE08C171B6C3E00DDD525 /* coinbar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 830CE0BE171B6C3F00DDD525 /* Build configuration list for PBXNativeTarget "btcbar" */;
+			buildConfigurationList = 830CE0BE171B6C3F00DDD525 /* Build configuration list for PBXNativeTarget "coinbar" */;
 			buildPhases = (
 				830CE089171B6C3E00DDD525 /* Sources */,
 				830CE08A171B6C3E00DDD525 /* Frameworks */,
@@ -235,9 +240,9 @@
 			);
 			dependencies = (
 			);
-			name = btcbar;
+			name = coinbar;
 			productName = btcbar;
-			productReference = 830CE08D171B6C3E00DDD525 /* btcbar.app */;
+			productReference = 830CE08D171B6C3E00DDD525 /* coinbar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -247,7 +252,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = nearengine;
+				ORGANIZATIONNAME = bocai;
 				TargetAttributes = {
 					830CE08C171B6C3E00DDD525 = {
 						DevelopmentTeam = E9EW4P4JNL;
@@ -259,7 +264,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 830CE088171B6C3E00DDD525 /* Build configuration list for PBXProject "btcbar" */;
+			buildConfigurationList = 830CE088171B6C3E00DDD525 /* Build configuration list for PBXProject "coinbar" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -271,7 +276,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				830CE08C171B6C3E00DDD525 /* btcbar */,
+				830CE08C171B6C3E00DDD525 /* coinbar */,
 			);
 		};
 /* End PBXProject section */
@@ -302,6 +307,7 @@
 				4AE253D91BDF8973002B8FDD /* BTCCCNYFetcher.m in Sources */,
 				4A5F94F11B0C54A00077BEBF /* HuobiCNYFetcher.m in Sources */,
 				4A93AA441D000A3B00A7C6E4 /* HaobtcInstantCNYFetcher.m in Sources */,
+				8490B1E71F0E0FAC00F19DCD /* YunbiEOSFetcher.m in Sources */,
 				4AFCE09B1D51C8D000D8032E /* YunbiEtcFetcher.m in Sources */,
 				4A598AB91CC4826C0037DAF2 /* YunbiEthFetcher.m in Sources */,
 				4A5F94F01B0C54A00077BEBF /* BitFinexUSDFetcher.m in Sources */,
@@ -395,10 +401,10 @@
 				CODE_SIGN_ENTITLEMENTS = btcbar/btcbar.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "btcbar/btcbar-Prefix.pch";
-				INFOPLIST_FILE = "btcbar/btcbar-Info.plist";
+				GCC_PREFIX_HEADER = "btcbar/coinbar-Prefix.pch";
+				INFOPLIST_FILE = "btcbar/coinbar-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_BUNDLE_IDENTIFIER = com.philsong.btcbar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.philsong.coinbar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -410,10 +416,10 @@
 				CODE_SIGN_ENTITLEMENTS = btcbar/btcbar.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "btcbar/btcbar-Prefix.pch";
-				INFOPLIST_FILE = "btcbar/btcbar-Info.plist";
+				GCC_PREFIX_HEADER = "btcbar/coinbar-Prefix.pch";
+				INFOPLIST_FILE = "btcbar/coinbar-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_BUNDLE_IDENTIFIER = com.philsong.btcbar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.philsong.coinbar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -422,7 +428,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		830CE088171B6C3E00DDD525 /* Build configuration list for PBXProject "btcbar" */ = {
+		830CE088171B6C3E00DDD525 /* Build configuration list for PBXProject "coinbar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				830CE0BC171B6C3F00DDD525 /* Debug */,
@@ -431,7 +437,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		830CE0BE171B6C3F00DDD525 /* Build configuration list for PBXNativeTarget "btcbar" */ = {
+		830CE0BE171B6C3F00DDD525 /* Build configuration list for PBXNativeTarget "coinbar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				830CE0BF171B6C3F00DDD525 /* Debug */,

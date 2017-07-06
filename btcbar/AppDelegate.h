@@ -23,6 +23,7 @@
 #import "PoloniexEthFetcher.h"
 #import "YunbiEtcFetcher.h"
 #import "PoloniexEtcFetcher.h"
+#import "YunbiEOSFetcher.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
     NSMenu *btcbarMainMenu;

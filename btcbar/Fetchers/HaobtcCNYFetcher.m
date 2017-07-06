@@ -15,10 +15,10 @@
     if (self = [super init])
     {
         // Menu Item Name
-        self.ticker_menu = @"BiXin";
+        self.ticker_menu = @"BixinOTC BTC";
 
         // Website location
-        self.url = @"http://k.sosobtc.com/btc_haobtc.html?from=1NDnnWCUu926z4wxA3sNBGYWNQD3mKyes8?from=1NDnnWCUu926z4wxA3sNBGYWNQD3mKyes8";
+        self.url = @"http://im.bixin.com?from=1NDnnWCUu926z4wxA3sNBGYWNQD3mKyes8";
 
         // Immediately request first update
         [self requestUpdate];

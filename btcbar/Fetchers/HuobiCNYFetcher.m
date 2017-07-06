@@ -15,7 +15,7 @@
     if (self = [super init])
     {
         // Menu Item Name
-        self.ticker_menu = @"Huobi";
+        self.ticker_menu = @"Huobi BTC";
 
         // Website location
         self.url = @"http://k.sosobtc.com/btc_huobi.html?from=1NDnnWCUu926z4wxA3sNBGYWNQD3mKyes8";

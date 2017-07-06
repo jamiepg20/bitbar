@@ -18,7 +18,7 @@
         self.ticker_menu = @"云币 ETH";
         
         // Website location
-        self.url = @"https://yunbi.com/markets/ethcny";
+        self.url = @"https://k.sosobtc.com/eth_yunbi.html";
         
         // Immediately request first update
         [self requestUpdate];

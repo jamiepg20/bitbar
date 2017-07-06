@@ -15,7 +15,7 @@
     if (self = [super init])
     {
         // Menu Item Name
-        self.ticker_menu = @"OKCoinDQ";
+        self.ticker_menu = @"OKEx季度合约";
         
         // Website location
         self.url = @"http://k.sosobtc.com/btcquarter_okcoinfutures.html?from=1NDnnWCUu926z4wxA3sNBGYWNQD3mKyes8";
@@ -40,7 +40,7 @@
 // Initiates an asyncronous HTTP connection
 - (void)requestUpdate
 {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://www.okcoin.com/api/v1/future_ticker.do?symbol=btc_usd&contract_type=quarter"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://www.okex.com/api/v1/future_ticker.do?symbol=btc_usd&contract_type=quarter"]];
     
     // Set the request's user agent
     [request addValue:@"btcbar/2.0 (OKCoinFutureUSDFetcher)" forHTTPHeaderField:@"User-Agent"];

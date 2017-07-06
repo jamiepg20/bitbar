@@ -1,24 +1,24 @@
 //
-//  OKCoinCYNFetcher.m
+//  OKCoinUSDFetcher.m
 //  btcbar
 //
-//  Created by phil on 15/4/16.
-//  Copyright (c) 2015年 nearengine. All rights reserved.
+//  Created by Tim Daubenschütz on 22/01/15.
+//  Copyright (c) 2015 nearengine. All rights reserved.
 //
 
-#import "OKCoinCNYFetcher.h"
+#import "YunbiEOSFetcher.h"
 
-@implementation OKCoinCNYFetcher
+@implementation YunbiEOSFetcher
 
 - (id)init
 {
     if (self = [super init])
     {
         // Menu Item Name
-        self.ticker_menu = @"OKCoin BTC";
+        self.ticker_menu = @"云币 EOS";
         
         // Website location
-        self.url = @"http://k.sosobtc.com/btc_okcoin.html?from=1NDnnWCUu926z4wxA3sNBGYWNQD3mKyes8";
+        self.url = @"https://k.sosobtc.com/eos_yunbi.html";
         
         // Immediately request first update
         [self requestUpdate];
@@ -40,10 +40,10 @@
 // Initiates an asyncronous HTTP connection
 - (void)requestUpdate
 {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://www.okcoin.cn/api/v1/ticker.do?symbol=btc_cny"]];
+   NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://yunbi.com//api/v2/tickers/eoscny.json"]];
     
     // Set the request's user agent
-    [request addValue:@"btcbar/2.0 (OKCoinCNYFetcher)" forHTTPHeaderField:@"User-Agent"];
+    [request addValue:@"btcbar/2.0 (YunbiEthFetcher)" forHTTPHeaderField:@"User-Agent"];
     
     // Initialize a connection from our request
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
@@ -86,12 +86,16 @@
         NSString *resultsStatus = [ticker objectForKey:@"last"];
         
         
+        
         // If API call succeeded update the ticker...
         if(resultsStatus)
         {
-            resultsStatus = [NSString stringWithFormat:@"¥%@", resultsStatus];
+            NSNumberFormatter *currencyStyle = [[NSNumberFormatter alloc] init];
+            currencyStyle.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh-CN"];
+            currencyStyle.numberStyle = NSNumberFormatterCurrencyStyle;
             
-            self.ticker = resultsStatus;
+            self.error = nil;
+            self.ticker = [currencyStyle stringFromNumber:[NSDecimalNumber decimalNumberWithString:resultsStatus]];
         }
         // Otherwise log an error...
         else
@@ -114,5 +118,6 @@
     self.error = [NSError errorWithDomain:@"com.nearengine.btcbar" code:0 userInfo:[NSDictionary dictionaryWithObjectsAndKeys: @"Connection Error", NSLocalizedDescriptionKey, @"Could not connect to OKCoin.", NSLocalizedFailureReasonErrorKey, nil]];
     self.ticker = nil;
 }
+
 
 @end
