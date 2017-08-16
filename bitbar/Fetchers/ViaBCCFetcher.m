@@ -6,19 +6,19 @@
 //  Copyright (c) 2015 nearengine. All rights reserved.
 //
 
-#import "PoloniexEtcFetcher.h"
+#import "ViaBCCFetcher.h"
 
-@implementation PoloniexEtcFetcher
+@implementation ViaBCCFetcher
 
 - (id)init
 {
     if (self = [super init])
     {
         // Menu Item Name
-        self.ticker_menu = @"Poloniex ETC";
+        self.ticker_menu = @"ViaBTC BCC";
         
         // Website location
-        self.url = @"https://poloniex.com";
+        self.url = @"https://k.sosobtc.com/bcc_viabtc.html";
         
         // Immediately request first update
         [self requestUpdate];
@@ -40,10 +40,10 @@
 // Initiates an asyncronous HTTP connection
 - (void)requestUpdate
 {
-   NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://poloniex.com/public?command=returnTicker"]];
+   NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://www.viabtc.com/api/v1/market/ticker?market=BCCCNY"]];
     
     // Set the request's user agent
-    [request addValue:@"btcbar/2.0 (PoloniexEthFetcher)" forHTTPHeaderField:@"User-Agent"];
+    [request addValue:@"bitbar/4.0 (ViabtcFetcher)" forHTTPHeaderField:@"User-Agent"];
     
     // Initialize a connection from our request
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
@@ -82,16 +82,15 @@
     if(results)
     {
         // Get API status
-        NSDictionary *ticker = [results objectForKey:@"USDT_ETC"];
+        NSDictionary *data = [results objectForKey:@"data"];
+        NSDictionary *ticker = [data objectForKey:@"ticker"];
         NSString *resultsStatus = [ticker objectForKey:@"last"];
-        
-        
         
         // If API call succeeded update the ticker...
         if(resultsStatus)
         {
             NSNumberFormatter *currencyStyle = [[NSNumberFormatter alloc] init];
-            currencyStyle.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en-US"];
+            currencyStyle.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh-CN"];
             currencyStyle.numberStyle = NSNumberFormatterCurrencyStyle;
             
             self.error = nil;

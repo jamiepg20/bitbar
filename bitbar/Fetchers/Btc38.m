@@ -1,24 +1,24 @@
 //
-//  OKCoinUSDFetcher.m
+//  Btc38.m
 //  btcbar
 //
-//  Created by Tim Daubenschütz on 22/01/15.
-//  Copyright (c) 2015 nearengine. All rights reserved.
+//  Created by phil on 15/4/16.
+//  Copyright (c) 2015年 nearengine. All rights reserved.
 //
 
-#import "YunbiEtcFetcher.h"
+#import "Btc38.h"
 
-@implementation YunbiEtcFetcher
+@implementation Btc38
 
 - (id)init
 {
     if (self = [super init])
     {
         // Menu Item Name
-        self.ticker_menu = @"云币 ETC";
+        self.ticker_menu = @"BTC38";
         
         // Website location
-        self.url = @"https://k.sosobtc.com/etc_yunbi.html";
+        self.url = @"http://btc38.com?from=1NDnnWCUu926z4wxA3sNBGYWNQD3mKyes8";
         
         // Immediately request first update
         [self requestUpdate];
@@ -40,10 +40,10 @@
 // Initiates an asyncronous HTTP connection
 - (void)requestUpdate
 {
-   NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://yunbi.com//api/v2/tickers/etccny.json"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://api.btc38.com/v1/ticker.php?c=all&mk_type=cny"]];
     
     // Set the request's user agent
-    [request addValue:@"btcbar/2.0 (YunbiEthFetcher)" forHTTPHeaderField:@"User-Agent"];
+    [request addValue:@"bitbar/4.0 (OkcoinCNYFetcher)" forHTTPHeaderField:@"User-Agent"];
     
     // Initialize a connection from our request
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
@@ -82,20 +82,26 @@
     if(results)
     {
         // Get API status
-        NSDictionary *ticker = [results objectForKey:@"ticker"];
-        NSString *resultsStatus = [ticker objectForKey:@"last"];
-        
-        
-        
+        NSNumber *xrp=[[[results objectForKey:@"xrp"]objectForKey:@"ticker"] objectForKey:@"last"];
+        NSNumber *bts=[[[results objectForKey:@"bts"]objectForKey:@"ticker"] objectForKey:@"last"];
+
         // If API call succeeded update the ticker...
-        if(resultsStatus)
+        if(xrp)
         {
-            NSNumberFormatter *currencyStyle = [[NSNumberFormatter alloc] init];
-            currencyStyle.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh-CN"];
-            currencyStyle.numberStyle = NSNumberFormatterCurrencyStyle;
+            NSString *xrpstring = [NSString stringWithFormat:@"XRP %lg", [xrp doubleValue]];
+            NSString *btsstring = [NSString stringWithFormat:@" BTS %lg",[bts doubleValue]];
             
-            self.error = nil;
-            self.ticker = [currencyStyle stringFromNumber:[NSDecimalNumber decimalNumberWithString:resultsStatus]];
+            NSString *resultsStatus =  [xrpstring stringByAppendingString:btsstring];
+            
+            NSLog(resultsStatus,nil);
+            
+            self.ticker = resultsStatus;
+
+//            NSNumberFormatter *currencyStyle = [[NSNumberFormatter alloc] init];
+//            currencyStyle.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
+//            currencyStyle.numberStyle = NSNumberFormatterCurrencyStyle;
+//            resultsStatus = [currencyStyle stringFromNumber:[NSDecimalNumber decimalNumberWithString:resultsStatus]];
+//            self.ticker = resultsStatus;
         }
         // Otherwise log an error...
         else
@@ -115,9 +121,9 @@
 // HTTP request failed
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    self.error = [NSError errorWithDomain:@"com.nearengine.btcbar" code:0 userInfo:[NSDictionary dictionaryWithObjectsAndKeys: @"Connection Error", NSLocalizedDescriptionKey, @"Could not connect to OKCoin.", NSLocalizedFailureReasonErrorKey, nil]];
+    self.error = [NSError errorWithDomain:@"com.nearengine.btcbar" code:0 userInfo:[NSDictionary dictionaryWithObjectsAndKeys: @"Connection Error", NSLocalizedDescriptionKey, @"Could not connect to BitStamp.", NSLocalizedFailureReasonErrorKey, nil]];
     self.ticker = nil;
 }
 
-
 @end
+

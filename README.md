@@ -27,6 +27,9 @@ It requires OS X 10.7+ and a 64-bit processor.
 
 ## Changelog
 
+### 4.0.0
+* Add the ViaBTC BCC price.
+* 
 ### 3.1.0
 * Add the Yunbi EOS price.
 
@@ -110,3 +113,7 @@ The source is provided for inspection, considering the nature of Bitcoin. You ar
 If for some reason you feel like donating a few micro btc to future development, those should go here:
 
 `1D3NtjVFpoXonqk3MZwsYD9iV5WA7MRXUj`
+
+## Credits
+
+* @[chrisshiplet](https://github.com/chrisshiplet/) for [the original work on **btcbar**](https://github.com/chrisshiplet/btcbar)

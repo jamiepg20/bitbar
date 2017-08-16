@@ -6,19 +6,19 @@
 //  Copyright (c) 2014 nearengine. All rights reserved.
 //
 
-#import "BTCCCNYFetcher.h"
+#import "HuobiCNYFetcher.h"
 
-@implementation BTCCCNYFetcher
+@implementation HuobiCNYFetcher
 
 - (id)init
 {
     if (self = [super init])
     {
         // Menu Item Name
-        self.ticker_menu = @"BTCC";
+        self.ticker_menu = @"Huobi BTC";
 
         // Website location
-        self.url = @"http://k.sosobtc.com/btc_btcchina.html?from=1NDnnWCUu926z4wxA3sNBGYWNQD3mKyes8";
+        self.url = @"http://k.sosobtc.com/btc_huobi.html?from=1NDnnWCUu926z4wxA3sNBGYWNQD3mKyes8";
 
         // Immediately request first update
         [self requestUpdate];
@@ -40,10 +40,10 @@
 // Initiates an asyncronous HTTP connection
 - (void)requestUpdate
 {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://data.btcchina.com/data/ticker?market=btccny"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://api.huobi.com/staticmarket/ticker_btc_json.js"]];
 
     // Set the request's user agent
-    [request addValue:@"btcbar/2.0 (BTCCCNYFetcher)" forHTTPHeaderField:@"User-Agent"];
+    [request addValue:@"bitbar/4.0 (HuobiCNYFetcher)" forHTTPHeaderField:@"User-Agent"];
 
     // Initialize a connection from our request
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
@@ -77,23 +77,24 @@
     if (!responseStr) {
         return;
     }
-    
+
     NSString *resultsStr = responseStr;
-    
+
     // Parse the JSON into results
     NSError *jsonParsingError = nil;
     id results = [NSJSONSerialization JSONObjectWithData:[resultsStr dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:&jsonParsingError];
-    
+
     // Results parsed successfully from JSON
     if (results)
     {
         NSDictionary *ticker_resp = [results objectForKey:@"ticker"];
-        NSString *ticker = [ticker_resp objectForKey:@"last"];
+        NSNumber *ticker = [ticker_resp objectForKey:@"last"];
         
         if (ticker) {
-//            NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-            NSString *resultsStatus = [[NSString alloc] init];
-            resultsStatus = [NSString stringWithFormat:@"¥%@", ticker];
+            NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+            [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+            NSString *resultsStatus = [numberFormatter stringFromNumber:ticker];
+            resultsStatus = [NSString stringWithFormat:@"¥%@", resultsStatus];
             
             self.error = nil;
             self.ticker = resultsStatus;

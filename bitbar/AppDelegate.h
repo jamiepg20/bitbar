@@ -5,25 +5,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-#import "BitStampUSDFetcher.h"
-#import "CoinbaseUSDFetcher.h"
-#import "BTCeUSDFetcher.h"
-#import "BitFinexUSDFetcher.h"
-#import "WinkDexUSDFetcher.h"
-#import "OKCoinCNYFetcher.h"
-#import "HuobiCNYFetcher.h"
-#import "Btc38.h"
-#import "AstockFetcher.h"
-#import "HaobtcCNYFetcher.h"
-#import "HaobtcInstantCNYFetcher.h"
-
-#import "BTCCCNYFetcher.h"
-#import "OKCoinFutureUSDFetcher.h"
-#import "YunbiEthFetcher.h"
-#import "PoloniexEthFetcher.h"
-#import "YunbiEtcFetcher.h"
-#import "PoloniexEtcFetcher.h"
-#import "YunbiEOSFetcher.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
     NSMenu *btcbarMainMenu;

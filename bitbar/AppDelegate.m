@@ -5,8 +5,28 @@
 
 #import "AppDelegate.h"
 
-@implementation AppDelegate
+#import "BitStampUSDFetcher.h"
+#import "CoinbaseUSDFetcher.h"
+#import "BTCeUSDFetcher.h"
+#import "BitFinexUSDFetcher.h"
+#import "WinkDexUSDFetcher.h"
+#import "OKCoinCNYFetcher.h"
+#import "HuobiCNYFetcher.h"
+#import "Btc38.h"
+#import "AstockFetcher.h"
+#import "HaobtcCNYFetcher.h"
+#import "HaobtcInstantCNYFetcher.h"
 
+#import "BTCCCNYFetcher.h"
+#import "OKCoinFutureUSDFetcher.h"
+#import "YunbiEthFetcher.h"
+#import "PoloniexEthFetcher.h"
+#import "YunbiEtcFetcher.h"
+#import "PoloniexEtcFetcher.h"
+#import "YunbiEOSFetcher.h"
+#import "ViaBCCFetcher.h"
+
+@implementation AppDelegate
 
 //
 // ENTRY & EXIT
@@ -28,7 +48,7 @@
     // Pass each ticker object into a dictionary, get first updates
     tickers = [NSMutableArray arrayWithObjects:
 //               [[HaobtcInstantCNYFetcher alloc] init],
-               [[HaobtcCNYFetcher alloc] init],
+//               [[HaobtcCNYFetcher alloc] init],
                [[HuobiCNYFetcher alloc] init],
                [[OKCoinCNYFetcher alloc] init],
 //               [[BTCCCNYFetcher alloc] init],
@@ -41,6 +61,8 @@
                [[YunbiEthFetcher alloc] init],
 //               [[PoloniexEthFetcher alloc] init],
                [[YunbiEtcFetcher alloc] init],
+               [[ViaBCCFetcher alloc] init],
+
 //               [[PoloniexEtcFetcher alloc] init],
               // [[WinkDexUSDFetcher alloc] init],
 //               [[Btc38 alloc] init],

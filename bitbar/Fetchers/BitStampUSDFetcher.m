@@ -1,29 +1,26 @@
 //
-//  WinkDexUSDFetcher.m
+//  BitStampUSDFetcher.m
 //  btcbar
 //
-//  Created by Tim Daubenschütz on 22/01/15.
-//  Copyright (c) 2015 nearengine. All rights reserved.
-//
 
-#import "WinkDexUSDFetcher.h"
+#import "BitStampUSDFetcher.h"
 
-@implementation WinkDexUSDFetcher
+@implementation BitStampUSDFetcher
 
 - (id)init
 {
     if (self = [super init])
     {
         // Menu Item Name
-        self.ticker_menu = @"WinkDexBTC";
-        
+        self.ticker_menu = @"BitStamp";
+
         // Website location
-        self.url = @"https://winkdex.com/";
-        
+        self.url = @"http://k.sosobtc.com/btc_bitstamp.html?from=1NDnnWCUu926z4wxA3sNBGYWNQD3mKyes8";
+
         // Immediately request first update
         [self requestUpdate];
     }
-    
+
     return self;
 }
 
@@ -32,7 +29,7 @@
 {
     // Update the ticker value
     _ticker = tickerString;
-    
+
     // Trigger notification to update ticker
     [[NSNotificationCenter defaultCenter] postNotificationName:@"btcbar_ticker_update" object:self];
 }
@@ -40,16 +37,14 @@
 // Initiates an asyncronous HTTP connection
 - (void)requestUpdate
 {
-    // Documentation for this API
-    // can be found here: http://docs.winkdex.com/#get-request
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://winkdex.com/api/v0/price"]];
-    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://www.bitstamp.net/api/ticker/"]];
+
     // Set the request's user agent
-    [request addValue:@"btcbar/2.0 (WinkDexUSDFetcher)" forHTTPHeaderField:@"User-Agent"];
-    
+    [request addValue:@"bitbar/4.0 (BitStampUSDFetcher)" forHTTPHeaderField:@"User-Agent"];
+
     // Initialize a connection from our request
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    
+
     // Go go go
     [connection start];
 }
@@ -79,24 +74,20 @@
     NSError *jsonParsingError = nil;
     NSDictionary *results = [[NSDictionary alloc] init];
     results = [NSJSONSerialization JSONObjectWithData:self.responseData options:0 error:&jsonParsingError];
-    
+
     // Results parsed successfully from JSON
     if(results)
     {
         // Get API status
-        NSString *resultsStatus = [results objectForKey:@"price"];
-        
+        NSString *resultsStatus = [results objectForKey:@"last"];
+
         // If API call succeeded update the ticker...
         if(resultsStatus)
         {
             NSNumberFormatter *currencyStyle = [[NSNumberFormatter alloc] init];
             currencyStyle.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
             currencyStyle.numberStyle = NSNumberFormatterCurrencyStyle;
-            
-            // We first need to convert the price form pennys to dollars
-            // then we can asign it to the view.
-            NSDecimalNumber *price = [[NSDecimalNumber alloc] initWithDouble:[resultsStatus doubleValue]/100];
-            resultsStatus = [currencyStyle stringFromNumber:price];
+            resultsStatus = [currencyStyle stringFromNumber:[NSDecimalNumber decimalNumberWithString:resultsStatus]];
             self.ticker = resultsStatus;
         }
         // Otherwise log an error...
@@ -117,9 +108,8 @@
 // HTTP request failed
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    self.error = [NSError errorWithDomain:@"com.nearengine.btcbar" code:0 userInfo:[NSDictionary dictionaryWithObjectsAndKeys: @"Connection Error", NSLocalizedDescriptionKey, @"Could not connect to WinkDex.", NSLocalizedFailureReasonErrorKey, nil]];
+    self.error = [NSError errorWithDomain:@"com.nearengine.btcbar" code:0 userInfo:[NSDictionary dictionaryWithObjectsAndKeys: @"Connection Error", NSLocalizedDescriptionKey, @"Could not connect to BitStamp.", NSLocalizedFailureReasonErrorKey, nil]];
     self.ticker = nil;
 }
-
 
 @end

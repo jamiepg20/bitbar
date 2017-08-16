@@ -15,6 +15,7 @@
 		4A5F94F21B0C54A00077BEBF /* WinkDexUSDFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F94EF1B0C54A00077BEBF /* WinkDexUSDFetcher.m */; };
 		4A5F94F51B0C56DA0077BEBF /* OKCoinCNYFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F94F31B0C56DA0077BEBF /* OKCoinCNYFetcher.m */; };
 		4A93AA441D000A3B00A7C6E4 /* HaobtcInstantCNYFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A93AA431D000A3B00A7C6E4 /* HaobtcInstantCNYFetcher.m */; };
+		4AD368D91F44007B0076A513 /* ViaBCCFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD368D81F44007B0076A513 /* ViaBCCFetcher.m */; };
 		4AE253D91BDF8973002B8FDD /* BTCCCNYFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE253D71BDF8973002B8FDD /* BTCCCNYFetcher.m */; };
 		4AE253DC1BDF8AED002B8FDD /* OKCoinFutureUSDFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE253DA1BDF8AED002B8FDD /* OKCoinFutureUSDFetcher.m */; };
 		4AEFB3E11AE0C48D00D6BE3A /* AstockFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEFB3DC1AE0C48D00D6BE3A /* AstockFetcher.m */; };
@@ -51,11 +52,13 @@
 		4A5F94F41B0C56DA0077BEBF /* OKCoinCNYFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OKCoinCNYFetcher.h; path = Fetchers/OKCoinCNYFetcher.h; sourceTree = "<group>"; };
 		4A93AA421D000A3B00A7C6E4 /* HaobtcInstantCNYFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HaobtcInstantCNYFetcher.h; path = Fetchers/HaobtcInstantCNYFetcher.h; sourceTree = "<group>"; };
 		4A93AA431D000A3B00A7C6E4 /* HaobtcInstantCNYFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HaobtcInstantCNYFetcher.m; path = Fetchers/HaobtcInstantCNYFetcher.m; sourceTree = "<group>"; };
+		4AD368D71F44007B0076A513 /* ViaBCCFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViaBCCFetcher.h; path = Fetchers/ViaBCCFetcher.h; sourceTree = "<group>"; };
+		4AD368D81F44007B0076A513 /* ViaBCCFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViaBCCFetcher.m; path = Fetchers/ViaBCCFetcher.m; sourceTree = "<group>"; };
 		4AE253D71BDF8973002B8FDD /* BTCCCNYFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BTCCCNYFetcher.m; path = Fetchers/BTCCCNYFetcher.m; sourceTree = "<group>"; };
 		4AE253D81BDF8973002B8FDD /* BTCCCNYFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BTCCCNYFetcher.h; path = Fetchers/BTCCCNYFetcher.h; sourceTree = "<group>"; };
 		4AE253DA1BDF8AED002B8FDD /* OKCoinFutureUSDFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OKCoinFutureUSDFetcher.m; path = Fetchers/OKCoinFutureUSDFetcher.m; sourceTree = "<group>"; };
 		4AE253DB1BDF8AED002B8FDD /* OKCoinFutureUSDFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OKCoinFutureUSDFetcher.h; path = Fetchers/OKCoinFutureUSDFetcher.h; sourceTree = "<group>"; };
-		4AEFB3DA1AE0ADA800D6BE3A /* btcbar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = btcbar.entitlements; sourceTree = "<group>"; };
+		4AEFB3DA1AE0ADA800D6BE3A /* bitbar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = bitbar.entitlements; sourceTree = "<group>"; };
 		4AEFB3DB1AE0C48D00D6BE3A /* AstockFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AstockFetcher.h; path = Fetchers/AstockFetcher.h; sourceTree = "<group>"; };
 		4AEFB3DC1AE0C48D00D6BE3A /* AstockFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AstockFetcher.m; path = Fetchers/AstockFetcher.m; sourceTree = "<group>"; };
 		4AEFB3DD1AE0C48D00D6BE3A /* Btc38.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Btc38.h; path = Fetchers/Btc38.h; sourceTree = "<group>"; };
@@ -64,15 +67,15 @@
 		4AFCE0971D51C8D000D8032E /* PoloniexEtcFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PoloniexEtcFetcher.m; path = Fetchers/PoloniexEtcFetcher.m; sourceTree = "<group>"; };
 		4AFCE0981D51C8D000D8032E /* YunbiEtcFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YunbiEtcFetcher.h; path = Fetchers/YunbiEtcFetcher.h; sourceTree = "<group>"; };
 		4AFCE0991D51C8D000D8032E /* YunbiEtcFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YunbiEtcFetcher.m; path = Fetchers/YunbiEtcFetcher.m; sourceTree = "<group>"; };
-		830CE08D171B6C3E00DDD525 /* coinbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coinbar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		830CE08D171B6C3E00DDD525 /* bitbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bitbar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		830CE090171B6C3E00DDD525 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		830CE093171B6C3E00DDD525 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		830CE094171B6C3E00DDD525 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		830CE095171B6C3E00DDD525 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		830CE098171B6C3E00DDD525 /* coinbar-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "coinbar-Info.plist"; sourceTree = "<group>"; };
+		830CE098171B6C3E00DDD525 /* bitbar-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "bitbar-Info.plist"; sourceTree = "<group>"; };
 		830CE09A171B6C3E00DDD525 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		830CE09C171B6C3E00DDD525 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		830CE09E171B6C3E00DDD525 /* coinbar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "coinbar-Prefix.pch"; sourceTree = "<group>"; };
+		830CE09E171B6C3E00DDD525 /* bitbar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bitbar-Prefix.pch"; sourceTree = "<group>"; };
 		830CE0A2171B6C3E00DDD525 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		830CE0A3171B6C3E00DDD525 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		830CE0AE171B6C3F00DDD525 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -105,7 +108,7 @@
 		830CE084171B6C3E00DDD525 = {
 			isa = PBXGroup;
 			children = (
-				830CE096171B6C3E00DDD525 /* btcbar */,
+				830CE096171B6C3E00DDD525 /* bitbar */,
 				830CE08F171B6C3E00DDD525 /* Frameworks */,
 				830CE08E171B6C3E00DDD525 /* Products */,
 			);
@@ -114,7 +117,7 @@
 		830CE08E171B6C3E00DDD525 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				830CE08D171B6C3E00DDD525 /* coinbar.app */,
+				830CE08D171B6C3E00DDD525 /* bitbar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,10 +142,10 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		830CE096171B6C3E00DDD525 /* btcbar */ = {
+		830CE096171B6C3E00DDD525 /* bitbar */ = {
 			isa = PBXGroup;
 			children = (
-				4AEFB3DA1AE0ADA800D6BE3A /* btcbar.entitlements */,
+				4AEFB3DA1AE0ADA800D6BE3A /* bitbar.entitlements */,
 				830CE0A2171B6C3E00DDD525 /* AppDelegate.h */,
 				830CE0A3171B6C3E00DDD525 /* AppDelegate.m */,
 				838F4296182E2F6E00B4FC58 /* Fetcher.h */,
@@ -151,16 +154,16 @@
 				83C3E74D1859701400FA2921 /* Views */,
 				830CE097171B6C3E00DDD525 /* Supporting Files */,
 			);
-			path = btcbar;
+			path = bitbar;
 			sourceTree = "<group>";
 		};
 		830CE097171B6C3E00DDD525 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				830CE098171B6C3E00DDD525 /* coinbar-Info.plist */,
+				830CE098171B6C3E00DDD525 /* bitbar-Info.plist */,
 				830CE099171B6C3E00DDD525 /* InfoPlist.strings */,
 				830CE09C171B6C3E00DDD525 /* main.m */,
-				830CE09E171B6C3E00DDD525 /* coinbar-Prefix.pch */,
+				830CE09E171B6C3E00DDD525 /* bitbar-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -177,6 +180,8 @@
 		838F4297182E5A5000B4FC58 /* Fetchers */ = {
 			isa = PBXGroup;
 			children = (
+				4AD368D71F44007B0076A513 /* ViaBCCFetcher.h */,
+				4AD368D81F44007B0076A513 /* ViaBCCFetcher.m */,
 				8490B1E51F0E0FAC00F19DCD /* YunbiEOSFetcher.h */,
 				8490B1E61F0E0FAC00F19DCD /* YunbiEOSFetcher.m */,
 				4AFCE0961D51C8D000D8032E /* PoloniexEtcFetcher.h */,
@@ -228,9 +233,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		830CE08C171B6C3E00DDD525 /* coinbar */ = {
+		830CE08C171B6C3E00DDD525 /* bitbar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 830CE0BE171B6C3F00DDD525 /* Build configuration list for PBXNativeTarget "coinbar" */;
+			buildConfigurationList = 830CE0BE171B6C3F00DDD525 /* Build configuration list for PBXNativeTarget "bitbar" */;
 			buildPhases = (
 				830CE089171B6C3E00DDD525 /* Sources */,
 				830CE08A171B6C3E00DDD525 /* Frameworks */,
@@ -240,9 +245,9 @@
 			);
 			dependencies = (
 			);
-			name = coinbar;
-			productName = btcbar;
-			productReference = 830CE08D171B6C3E00DDD525 /* coinbar.app */;
+			name = bitbar;
+			productName = bitbar;
+			productReference = 830CE08D171B6C3E00DDD525 /* bitbar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -264,7 +269,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 830CE088171B6C3E00DDD525 /* Build configuration list for PBXProject "coinbar" */;
+			buildConfigurationList = 830CE088171B6C3E00DDD525 /* Build configuration list for PBXProject "bitbar" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -276,7 +281,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				830CE08C171B6C3E00DDD525 /* coinbar */,
+				830CE08C171B6C3E00DDD525 /* bitbar */,
 			);
 		};
 /* End PBXProject section */
@@ -320,6 +325,7 @@
 				4A5F94F21B0C54A00077BEBF /* WinkDexUSDFetcher.m in Sources */,
 				4A598AB81CC4826C0037DAF2 /* PoloniexEthFetcher.m in Sources */,
 				830CE0A4171B6C3E00DDD525 /* AppDelegate.m in Sources */,
+				4AD368D91F44007B0076A513 /* ViaBCCFetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,13 +404,13 @@
 		830CE0BF171B6C3F00DDD525 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = btcbar/btcbar.entitlements;
+				CODE_SIGN_ENTITLEMENTS = bitbar/bitbar.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "btcbar/coinbar-Prefix.pch";
-				INFOPLIST_FILE = "btcbar/coinbar-Info.plist";
+				GCC_PREFIX_HEADER = "bitbar/bitbar-Prefix.pch";
+				INFOPLIST_FILE = "bitbar/bitbar-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_BUNDLE_IDENTIFIER = com.philsong.coinbar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.philsong.bitbar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -413,13 +419,13 @@
 		830CE0C0171B6C3F00DDD525 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = btcbar/btcbar.entitlements;
+				CODE_SIGN_ENTITLEMENTS = bitbar/bitbar.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "btcbar/coinbar-Prefix.pch";
-				INFOPLIST_FILE = "btcbar/coinbar-Info.plist";
+				GCC_PREFIX_HEADER = "bitbar/bitbar-Prefix.pch";
+				INFOPLIST_FILE = "bitbar/bitbar-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_BUNDLE_IDENTIFIER = com.philsong.coinbar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.philsong.bitbar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -428,7 +434,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		830CE088171B6C3E00DDD525 /* Build configuration list for PBXProject "coinbar" */ = {
+		830CE088171B6C3E00DDD525 /* Build configuration list for PBXProject "bitbar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				830CE0BC171B6C3F00DDD525 /* Debug */,
@@ -437,7 +443,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		830CE0BE171B6C3F00DDD525 /* Build configuration list for PBXNativeTarget "coinbar" */ = {
+		830CE0BE171B6C3F00DDD525 /* Build configuration list for PBXNativeTarget "bitbar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				830CE0BF171B6C3F00DDD525 /* Debug */,

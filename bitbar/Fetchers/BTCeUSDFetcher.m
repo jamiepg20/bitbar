@@ -1,29 +1,26 @@
 //
-//  HuobiCNYFetcher.m
+//  BTCeUSDFetcher.m
 //  btcbar
 //
-//  Created by lwei on 2/13/14.
-//  Copyright (c) 2014 nearengine. All rights reserved.
-//
 
-#import "HuobiCNYFetcher.h"
+#import "BTCeUSDFetcher.h"
 
-@implementation HuobiCNYFetcher
+@implementation BTCeUSDFetcher
 
 - (id)init
 {
     if (self = [super init])
     {
         // Menu Item Name
-        self.ticker_menu = @"Huobi BTC";
-
+        self.ticker_menu = @"BTCe";
+        
         // Website location
-        self.url = @"http://k.sosobtc.com/btc_huobi.html?from=1NDnnWCUu926z4wxA3sNBGYWNQD3mKyes8";
-
+        self.url = @"http://k.sosobtc.com/btc_btce.html?from=1NDnnWCUu926z4wxA3sNBGYWNQD3mKyes8";
+        
         // Immediately request first update
         [self requestUpdate];
     }
-
+    
     return self;
 }
 
@@ -32,7 +29,7 @@
 {
     // Update the ticker value
     _ticker = tickerString;
-
+    
     // Trigger notification to update ticker
     [[NSNotificationCenter defaultCenter] postNotificationName:@"btcbar_ticker_update" object:self];
 }
@@ -40,14 +37,14 @@
 // Initiates an asyncronous HTTP connection
 - (void)requestUpdate
 {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://api.huobi.com/staticmarket/ticker_btc_json.js"]];
-
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://btc-e.com/api/2/btc_usd/ticker"]];
+    
     // Set the request's user agent
-    [request addValue:@"btcbar/2.0 (HuobiCNYFetcher)" forHTTPHeaderField:@"User-Agent"];
-
+    [request addValue:@"bitbar/4.0 (BTCeUSDFetcher)" forHTTPHeaderField:@"User-Agent"];
+    
     // Initialize a connection from our request
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-
+    
     // Go go go
     [connection start];
 }
@@ -73,33 +70,22 @@
 // Parse data after load
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    NSString *responseStr = [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
-    if (!responseStr) {
-        return;
-    }
-
-    NSString *resultsStr = responseStr;
-
     // Parse the JSON into results
     NSError *jsonParsingError = nil;
-    id results = [NSJSONSerialization JSONObjectWithData:[resultsStr dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:&jsonParsingError];
-
+    NSDictionary *results = [[NSDictionary alloc] init];
+    results = [NSJSONSerialization JSONObjectWithData:self.responseData options:0 error:&jsonParsingError];
+    
     // Results parsed successfully from JSON
-    if (results)
+    if(results)
     {
-        NSDictionary *ticker_resp = [results objectForKey:@"ticker"];
-        NSNumber *ticker = [ticker_resp objectForKey:@"last"];
         
-        if (ticker) {
-            NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-            [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
-            NSString *resultsStatus = [numberFormatter stringFromNumber:ticker];
-            resultsStatus = [NSString stringWithFormat:@"¥%@", resultsStatus];
-            
-            self.error = nil;
-            self.ticker = resultsStatus;
+        if ([[results objectForKey:@"ticker"] objectForKey:@"last"])
+        {
+            NSNumberFormatter *currencyStyle = [[NSNumberFormatter alloc] init];
+            currencyStyle.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+            currencyStyle.numberStyle = NSNumberFormatterCurrencyStyle;
+            self.ticker = [currencyStyle stringFromNumber:[[results objectForKey:@"ticker"] objectForKey:@"last"]];
         }
-        // Otherwise log an error...
         else
         {
             self.error = [NSError errorWithDomain:@"com.nearengine.btcbar" code:0 userInfo:[NSDictionary dictionaryWithObjectsAndKeys: @"API Error", NSLocalizedDescriptionKey, @"The JSON received did not contain a result or the API returned an error.", NSLocalizedFailureReasonErrorKey, nil]];
@@ -117,7 +103,7 @@
 // HTTP request failed
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    self.error = [NSError errorWithDomain:@"com.nearengine.btcbar" code:0 userInfo:[NSDictionary dictionaryWithObjectsAndKeys: @"Connection Error", NSLocalizedDescriptionKey, @"Could not connect to Huobi.", NSLocalizedFailureReasonErrorKey, nil]];
+    self.error = [NSError errorWithDomain:@"com.nearengine.btcbar" code:0 userInfo:[NSDictionary dictionaryWithObjectsAndKeys: @"Connection Error", NSLocalizedDescriptionKey, @"Could not connect to BTCe.", NSLocalizedFailureReasonErrorKey, nil]];
     self.ticker = nil;
 }
 
